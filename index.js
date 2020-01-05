@@ -9,7 +9,6 @@ function formatQueryParams(params) {
 }
 
 function displayMovies(responseJson) {
-  console.log(responseJson);
   let movie = responseJson.Search;
   $('#movies').empty();
 
@@ -61,7 +60,6 @@ $(function() {
       })
       .catch(err => {
         $('#js-error-message').text('Movie not found. Please try again!');
-        console.log(err.message);
       });
   });
 });
