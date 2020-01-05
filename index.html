@@ -9,18 +9,28 @@
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
-    <div class="container">
-      <h1>Movie Finder</h1>
+    <nav class="navbar navbar-default">
+      <div class="navbar-container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="index.html">MovieInfo</a>
+        </div>
+      </div>
+    </nav>
 
-      <form id="js-form">
-        <label class="search-term">Enter a movie</label>
-        <input type="text" name="search-term" id="js-search-term" placeholder="Movie name" required />
-        <input type="submit" value="Search" />
-      </form>
+    <div class="container">
+      <div class="search-part">
+        <h2 class="search-bar-title">Search For Movies</h2>
+
+        <form id="js-form">
+          <label class="search-term"></label>
+          <input type="text" name="search-term" id="js-search-term" placeholder="Movie name or keyword" required />
+          <input type="submit" value="Search" />
+        </form>
+      </div>
 
       <p id="js-error-message" class="error-message"></p>
       <section id="results" class="hidden">
-        <div id="results-list"></div>
+        <div id="movies"></div>
       </section>
     </div>
     <script

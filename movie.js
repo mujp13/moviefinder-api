@@ -9,8 +9,8 @@ function formatQueryParams(params) {
 }
 
 function getMovieDetail() {
+  
   let movieId = sessionStorage.getItem('movieId');
-  console.log(movieId);
 
   const params = {
     apikey: apiKey,
@@ -19,8 +19,6 @@ function getMovieDetail() {
 
   const queryString = formatQueryParams(params);
   const url = searchURL + '?' + queryString;
-
-  console.log(url);
 
   return fetch(url).then(response => {
     if (response.ok) {
@@ -39,7 +37,7 @@ function displayMovieDetail(responseJson) {
           <img src="${movie.Poster}" class="thumbnail">
         </div>
         <div class="col-md-8">
-          <h2>${movie.Title}</h2>
+          <p class="movie-title"><b>${movie.Title}</b></p>
           <ul class="list-group">
             <li class="list-group-item"><strong>Genre:</strong> ${movie.Genre}</li>
             <li class="list-group-item"><strong>Released:</strong> ${movie.Released}</li>
@@ -71,8 +69,7 @@ function getDetail() {
       displayMovieDetail(movies);
     })
     .catch(err => {
-      $('#js-error-message').text(`Something went wrong: ${err.message}`);
-      console.log(err.message);
+      $('#js-error-message').text('Movie not found. Please try again!');
     });
 }
 

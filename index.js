@@ -11,10 +11,10 @@ function formatQueryParams(params) {
 function displayMovies(responseJson) {
   console.log(responseJson);
   let movie = responseJson.Search;
-  $('#results-list').empty();
+  $('#movies').empty();
 
   for (let i = 0; i < movie.length; i++) {
-    $('#results-list').append(
+    $('#movies').append(
       `<div class="col-md-3">
       <div class="well text-center">
         <img src="${movie[i].Poster}">
@@ -53,14 +53,15 @@ function getMovies(query) {
 $(function() {
   $('form').submit(event => {
     event.preventDefault();
+    $('#js-error-message').empty();
     const searchTerm = $('#js-search-term').val();
     getMovies(searchTerm)
       .then(function(movies) {
         displayMovies(movies);
       })
       .catch(err => {
-        $('#js-error-message').text(`Something went wrong: ${err.message}`);
+        $('#js-error-message').text('Movie not found. Please try again!');
         console.log(err.message);
       });
   });
-})
+});
