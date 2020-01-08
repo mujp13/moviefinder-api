@@ -1,3 +1,5 @@
+/* This css file is to design the entire web app which includes a search page and a detailed page */
+
 body {
   background-color: black;
 }
@@ -9,8 +11,8 @@ body {
 .navbar-brand {
   color: white;
   text-decoration: none;
-  font-size: 15px;
   margin: 20px;
+  text-shadow: 0px 0px 6px rgba(255,255,255,0.7);
 }
 
 h2 {
@@ -25,7 +27,7 @@ h3 {
 
 h5 {
   color: white;
-  font-size: 100%;
+  font-size: 120%;
 }
 
 .text-center {
@@ -34,10 +36,11 @@ h5 {
 
 #js-form {
   text-align: center;
+  width: 100%;
 }
 
 #js-search-term {
-  width: 70%;
+  width: 50%;
   height: 20px;
   border-radius: 5px;
 }
@@ -46,7 +49,7 @@ h5 {
   display: block;
   background-color: rgba(41, 39, 39, 0.993);
   border-radius: 15px;
-  width: 90%;
+  width: 75%;
   margin: 0 auto;
   padding: 30px;
 
@@ -54,10 +57,16 @@ h5 {
 
 .search-term {
   color: white;
+
 }
 
 #js-error-message {
   color: red;
+}
+
+.movie-image {
+  cursor: pointer;
+  margin: 15px 0;
 }
 
 #movies {
@@ -80,11 +89,13 @@ h5 {
 .list-group {
   list-style-type: none;
   padding: 10px;
+  
 }
 
 .list-group-item {
-  padding: 10px;
+  padding: 0.5em;
   background-color: rgb(54, 51, 51);
+  
 }
 
 .row {
@@ -101,7 +112,7 @@ h5 {
   border-radius: 10px;
   background: rgb(14, 137, 209);
   padding: 10px; 
-  font-size: 10px;
+  font-size: 15px;
   color: white;
   text-decoration: none;
   text-align: center;
@@ -111,17 +122,27 @@ h5 {
   border-radius: 10px;
   background: rgba(65, 71, 75, 0.911);
   padding: 10px; 
-  font-size: 10px;
+  font-size: 15px;
   color: white;
   text-decoration: none;
   text-align: center;
+}
+
+.btn-primary,
+.btn-default {
+  margin-right: 10px;
+}
+
+.detail-buttons {
+  display: flex;
+  margin-top: 20px;
 }
 
 .movie-title {
   font-size: 25px;
 }
 
-@media(max-width:375px) {
+@media(max-width:325px) {
   .row {
     margin: 0 auto;
     margin-left: 10%;
@@ -132,14 +153,8 @@ h5 {
     background-color: rgba(41, 39, 39, 0.993);
   }
 
-}
-
-@media(min-width:960px){
-  #movies .col-md-3 .well{
-    height: 390px;
+  .search-term {
+    display: none;
   }
 
-  #movies .col-md-3 img{
-    height: 250px;
-  }
 }

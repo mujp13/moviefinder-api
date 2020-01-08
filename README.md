@@ -4,6 +4,9 @@ Movie Finder is a simple API web application which allows users to search movies
 
 Link: [live app](https://moviefinder-api.netlify.com)
 
+# Used Technologies 
+Javascript, CSS, HTML, jQuery
+
 # Screenshots
 
 Main page:
